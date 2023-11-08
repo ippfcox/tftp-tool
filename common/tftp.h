@@ -56,6 +56,9 @@ extern "C"
 #define EEXISTS 6   /* file already exists */
 #define ENOUSER 7   /* no such user */
 
+    // ***********************
+#define PACKET_SIZE_ ((SEGSIZE) + 4)
+
 #ifdef __cplusplus
 }
 #endif // __cplusplus

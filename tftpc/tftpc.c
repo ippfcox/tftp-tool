@@ -12,7 +12,6 @@
 // [ ] PUT
 
 #define PROMPT_SIZE_ 1024
-#define PACKET_SIZE_ ((SEGSIZE) + 4)
 
 typedef struct
 {
@@ -93,7 +92,7 @@ int do_get(context *ctx, char *filename, char *mode)
         int n = recvfrom(ctx->sock_fd, packet_buf, PACKET_SIZE_, 0, (struct sockaddr *)&raddr, &raddr_len);
         if (n < 0)
         {
-            printf("recvfrom: %s\n", strerror(errno));
+            printf("recvfrom failed: %s\n", strerror(errno));
             continue;
         }
         // parse data
